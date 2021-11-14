@@ -82,16 +82,16 @@
             var element = document.getElementById("aarrt").style.display = "block";
             count++;
         } else {
-            var element2 = document.getElementById("PSWRAGS").value;
+             var element2 = document.getElementById("PSWRAGS").value;
             var encrypted = CryptoJS.AES.encrypt(element2, "SECRET");
             //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
             // alert(encrypted)
-            encrypted2 = "U2FsdGVkX1/cP8EHFOirOH3Cc/P8xQzmz6GUx2UTagc="
-            var decrypted = CryptoJS.AES.decrypt(encrypted2, "SECRET");
-            dded = decrypted.toString(CryptoJS.enc.Utf8);
-            alert(dded)
-                //4d657373616765
-                //window.location = "profile.html?id=$" + encrypted;
+            //encrypted2 = "U2FsdGVkX1/cP8EHFOirOH3Cc/P8xQzmz6GUx2UTagc="
+            // var decrypted = CryptoJS.AES.decrypt(encrypted2, "SECRET");
+            //dded = decrypted.toString(CryptoJS.enc.Utf8);
+            //alert(dded)
+            //4d657373616765
+            window.location = "profile.html?id=$" + encrypted;
 
         }
     }

